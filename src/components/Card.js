@@ -7,14 +7,29 @@ const initialFieldValues = {
     nombre: '',
     tipo_de_carta: '',
     atributo: '',
+    atributo_ico: '',
     tipo: '',
-    nivel_rango: 0,
+    tipo_magica_trampa: '',
+    nivel_rango: '',
+    nivel_rango_ico: '',
+    magica_tampa_ico: '',
     escala: 0,
     rareza: '',
-    limitacion: 0,
+    limitacion: '',
     imageSrc: defaulImageSrc,
     image: null,
-    secure_url: ''
+    secure_url: '',
+    atk: '',
+    atk_ico:'',
+    def: '',
+    def_ico:'',
+    materiales: '',
+    descripcion: '',
+    caja: '',
+    estructura: '',
+    selection_box: '',
+    lote: '',
+    fecha_lanzamiento: ''
 }
 
 export default function Card(props) {
@@ -87,13 +102,28 @@ const handleFormSubmit = e =>{
     formData.append('nombre', values.nombre)
     formData.append('tipo_de_carta', values.tipo_de_carta)
     formData.append('atributo', values.atributo)
+    formData.append('atributo_ico', values.atributo_ico )
     formData.append('tipo', values.tipo)
+    formData.append('tipo_magica_trampa', values.tipo_magica_trampa)
     formData.append('nivel_rango', values.nivel_rango)
+    formData.append('nivel_rango_ico', values.nivel_rango_ico)
+    formData.append('magica_trampa_ico', values.magica_trampa_ico)
     formData.append('escala', values.escala)
     formData.append('rareza', values.rareza)
     formData.append('limitacion', values.limitacion)
     formData.append('image', values.image)
     formData.append('image.secure_url', values.secure_url)
+    formData.append('atk', values.atk)
+    formData.append('atk_ico', values.atk_ico)
+    formData.append('def', values.def)
+    formData.append('def_ico', values.def_ico)
+    formData.append('materiales', values.materiales)
+    formData.append('descripcion', values.descripcion)
+    formData.append('caja', values.caja)
+    formData.append('estructura', values.estructura)
+    formData.append('selection_box', values.selection_box)
+    formData.append('lote', values.lote)
+    formData.append('fecha_lanzamiento', values.fecha_lanzamiento)
     addOrEdit(formData,resetForm)    
 
     }
@@ -117,77 +147,182 @@ const applyErrorClass = field => ((field in errors && errors[field]===false )?' 
                     </div>
                     <div className='form-group'>
                         <input className={'form-control'+applyErrorClass('nombre')} placeholder='Ingrese nombre de carta' name='nombre' value={values.nombre} onChange={handleInputChange} />
+                        <label>Tipo de carta</label>
                         <select className='form-control' placeholder='Tipo de carta' name='tipo_de_carta' value={values.tipo_de_carta} onChange={handleInputChange} >
                         <option value=""></option>
-                                        <option value="monstruo normal">Monstruo Normal</option>
-                                        <option value="ritual">Rital</option>
-                                        <option value="sincronia">Sincronía</option>
-                                        <option value="monstruo de péndulo">Monstruo de Péndulo</option>
-                                        <option value="monstruo de péndulo normal">Monstruo de Péndulo Normal</option>
-                                        <option value="monstruo de efecto">Monstruo de Efecto</option>
-                                        <option value="fusion">Fusión</option>
-                                        <option value="xyz">Xyz</option>
-                                        <option value="link">Link</option>
-                                        <option value="mágica">Mágica</option>
-                                        <option value="trampa">Trampa</option>
+                                        <option value="Normal">Normal</option>
+                                        <option value="Ritual">Rital</option>
+                                        <option value="Sincronía">Sincronía</option>
+                                        <option value="Péndulo">Péndulo</option>
+                                        <option value="Péndulo normal">Péndulo Normal</option>
+                                        <option value="Efecto">Efecto</option>
+                                        <option value="Fusion">Fusión</option>
+                                        <option value="Xyz">Xyz</option>
+                                        <option value="Link">Link</option>
+                                        
                         </select>
+                        <label>Atributo</label>
                         <select  className='form-control' placeholder='atributo' name='atributo' value={values.atributo} onChange={handleInputChange} >
                             
                                         <option value=""></option>
                                         <option value="no">no aplica</option>
-                                        <option value="luz">LUZ</option>
-                                        <option value="oscuridad">OSCURIDAD</option>
-                                        <option value="agua">AGUA</option>
-                                        <option value="fuego">FUEGO</option>
-                                        <option value="tierra">TIERRA</option>
-                                        <option value="viento">VIENTO</option>
-                                        <option value="divinidad">DIVINIDAD</option>
+                                        <option value="LUZ">LUZ</option>
+                                        <option value="OSCURIDAD">OSCURIDAD</option>
+                                        <option value="AGUA">AGUA</option>
+                                        <option value="FUEGO">FUEGO</option>
+                                        <option value="TIERRA">TIERRA</option>
+                                        <option value="VIENTO">VIENTO</option>
+                                        <option value="DIVINIDAD">DIVINIDAD</option>
+                                        <option value="MÁGICA">MÁGICA</option>
+                                        <option value="TRAMPA">TRAMPA</option>
                             
                         </select>
+
+                        <label>Atributo ico</label>
+                        <select  className='form-control' placeholder='atributo icono' name='atributo_ico' value={values.atributo_ico} onChange={handleInputChange} >
+                            
+                                        <option value=""></option>
+                                        <option value="no">no aplica</option>
+                                        <option value="https://res.cloudinary.com/dqofcbeaq/image/upload/q_auto/v1663818431/iconos%20dlp/at-d_ssxcag.png">LUZ ico </option>
+                                        <option value="https://res.cloudinary.com/dqofcbeaq/image/upload/q_auto/v1663818431/iconos%20dlp/at-tr_zdjtkd.png">OSCURIDAD ico</option>
+                                        <option value="https://res.cloudinary.com/dqofcbeaq/image/upload/q_auto/v1663818431/iconos%20dlp/at-a_bgb8gi.png">AGUA ico</option>
+                                        <option value="https://res.cloudinary.com/dqofcbeaq/image/upload/q_auto/v1663818431/iconos%20dlp/at-f_x0zolt.png">FUEGO ico</option>
+                                        <option value="https://res.cloudinary.com/dqofcbeaq/image/upload/q_auto/v1663818431/iconos%20dlp/at-t_bfdbhz.png">TIERRA ico</option>
+                                        <option value="https://res.cloudinary.com/dqofcbeaq/image/upload/q_auto/v1663818431/iconos%20dlp/at-v_tlniay.png">VIENTO ico</option>
+                                        <option value="https://res.cloudinary.com/dqofcbeaq/image/upload/q_auto/v1663818431/iconos%20dlp/at-d_ssxcag.png">DIVINIDAD ico</option>
+                                        <option value="https://res.cloudinary.com/dqofcbeaq/image/upload/q_auto/v1663818431/iconos%20dlp/at-m_gojjne.png">MAGICA ico</option>
+                                        <option value="https://res.cloudinary.com/dqofcbeaq/image/upload/q_auto/v1663818431/iconos%20dlp/at-tr_zdjtkd.png">TRAMPA ico</option>
+                            
+                        </select>
+                        <label>Tipo</label>
                         <select  className='form-control' placeholder='tipo' name='tipo' value={values.tipo} onChange={handleInputChange} > 
 
                                         <option value=""></option>
-                                        <option value="dragon">Dragón</option>
-                                        <option value="zombi">Zombi</option>
-                                        <option value="demonio">Demonio</option>
-                                        <option value="piro">Piro</option>
-                                        <option value="serpiente marina">Serpiente Marina</option>
-                                        <option value="roca">Roca</option>
-                                        <option value="maquina">Máquina</option>
-                                        <option value="pez">Pez</option>
-                                        <option value="dinosaurio">Dinosaurio</option>
-                                        <option value="insecto">Insecto</option>
-                                        <option value="bestia">Bestia</option>
-                                        <option value="guerrero-bestia">Guerrero-Bestia</option>
-                                        <option value="planta">Planta</option>
-                                        <option value="aqua">Aqua</option>
-                                        <option value="guerrero">Guerrero</option>
-                                        <option value="bestia alada">Bestia Alada</option>
-                                        <option value="hada">Hada</option>
-                                        <option value="lanzador de conjuros">Lanzador de Conjuros</option>
-                                        <option value="trueno">Trueno</option>
-                                        <option value="reptil">Reptil</option>
-                                        <option value="psiquico">Psíquico</option>
-                                        <option value="wyrm">Wyrm</option>
-                                        <option value="ciberso">Ciberso</option>
-                                        <option value="Normal">Normal</option>
-                                        <option value="de campo">De campo</option>
-                                        <option value="de equipo">De equipo</option>
-                                        <option value="continua">Continua</option>
-                                        <option value="de juego rápido">De juego rapido</option>
-                                        <option value="de ritual">De ritual</option>
-                                        <option value="de contraefecto">De contraefecto</option>
-                                        <option value="continua">Continua</option>
+                                        <option value="Dragon">Dragón</option>
+                                        <option value="Zombi">Zombi</option>
+                                        <option value="Demonio">Demonio</option>
+                                        <option value="Piro">Piro</option>
+                                        <option value="Serpiente marina">Serpiente Marina</option>
+                                        <option value="Roca">Roca</option>
+                                        <option value="Maquina">Máquina</option>
+                                        <option value="Pez">Pez</option>
+                                        <option value="Dinosaurio">Dinosaurio</option>
+                                        <option value="Insecto">Insecto</option>
+                                        <option value="Bestia">Bestia</option>
+                                        <option value="Guerrero-bestia">Guerrero-Bestia</option>
+                                        <option value="Planta">Planta</option>
+                                        <option value="Aqua">Aqua</option>
+                                        <option value="Guerrero">Guerrero</option>
+                                        <option value="Bestia alada">Bestia Alada</option>
+                                        <option value="Hada">Hada</option>
+                                        <option value="Lanzador de conjuros">Lanzador de Conjuros</option>
+                                        <option value="Trueno">Trueno</option>
+                                        <option value="Reptil">Reptil</option>
+                                        <option value="Psiquico">Psíquico</option>
+                                        <option value="Wyrm">Wyrm</option>
+                                        <option value="Ciberso">Ciberso</option>
+                                        
                         
                         </select>
+                        <label>Tipo de mágica o trampa</label>
+                        <select  className='form-control' placeholder='tipo magica o trampa' name='tipo_magica_trampa' value={values.tipo_magica_trampa} onChange={handleInputChange} >
+                            
+                            <option value=""></option>
+                            <option value="no">no aplica</option>
+                            <option value="Normal">Normal</option>
+                                        <option value="De campo">De campo</option>
+                                        <option value="De equipo">De equipo</option>
+                                        <option value="Continua">Continua</option>
+                                        <option value="De juego rápido">De juego rapido</option>
+                                        <option value="De ritual">De ritual</option>
+                                        <option value="De contraefecto">De contraefecto</option>
+                                        <option value="Continua">Continua</option>
+                
+            </select>
+
+
                         <label>Nivel</label>
                         <input  className='form-control' placeholder='nivel_rango' name='nivel_rango' value={values.nivel_rango} onChange={handleInputChange} />
+                        <label>Nivel rango magica trampa Ico</label>
+                        <select  className='form-control' placeholder='nivel rango ico' name='nivel_rango_ico' value={values.nivel_rango_ico} onChange={handleInputChange} >
+                            
+                                        <option value=""></option>
+                                        <option value="no">no aplica</option>
+                                        <option value="https://res.cloudinary.com/dqofcbeaq/image/upload/v1663822936/iconos%20dlp/nivel_monstruo_mq6vmx.webp">NIVEL</option>
+                                        <option value="https://res.cloudinary.com/dqofcbeaq/image/upload/v1663823033/iconos%20dlp/rango_xyz_wepehq.webp">RANGO</option>
+                                        <option value="https://res.cloudinary.com/dqofcbeaq/image/upload/v1663822936/iconos%20dlp/continua_wh3pfj.webp">CONTINUA</option>
+                                        <option value="https://res.cloudinary.com/dqofcbeaq/image/upload/v1663822936/iconos%20dlp/normal_vpey0j.webp">NORMAL</option>
+                                        <option value="https://res.cloudinary.com/dqofcbeaq/image/upload/v1663822936/iconos%20dlp/de_campo_qoxyag.webp">DE CAMPO</option>
+                                        <option value="https://res.cloudinary.com/dqofcbeaq/image/upload/v1663822936/iconos%20dlp/contraefecto_pxkz7z.webp">CONTRAEFECTO</option>
+                                        <option value="https://res.cloudinary.com/dqofcbeaq/image/upload/v1663822936/iconos%20dlp/de_juego_rapido_mmsikz.webp">DE JUEGO RAPIDO</option>
+                            
+                        </select>    
+
                         <label>Escala</label>
                         <input  className='form-control' placeholder='escala' name='escala' value={values.escala} onChange={handleInputChange} />
                         <input  className='form-control' placeholder='rareza' name='rareza' value={values.rareza} onChange={handleInputChange} />
-                        <label>Limitación</label>
+                       
                         <input  className='form-control' placeholder='limitacion' name='limitacion' value={values.limitacion} onChange={handleInputChange} />
+                        <input className='form-control' placeholder='atk' name='atk' value={values.atk} onChange={handleInputChange} />
+                        <label>ATK ico</label>
+                        <select  className='form-control' placeholder='ataque icono' name='atk_ico' value={values.atk_ico} onChange={handleInputChange} >
+                            
+                                        <option value=""></option>
+                                        <option value="no">no aplica</option>
+                                        <option value="https://res.cloudinary.com/dqofcbeaq/image/upload/v1663827756/iconos%20dlp/Icono_ataque_u03lyx.gif">ATAQUE ico</option>
+                            
+                        </select>
+                        
+                        <input className='form-control' placeholder='def' name='def' value={values.def} onChange={handleInputChange} />
+                        <label>Def ico</label>
+                        <select  className='form-control' placeholder='defensa icono' name='def_ico' value={values.def_ico} onChange={handleInputChange} >
+                            
+                                        <option value=""></option>
+                                        <option value="no">no aplica</option>
+                                        <option value="https://res.cloudinary.com/dqofcbeaq/image/upload/v1663827756/iconos%20dlp/Icono_defensa_mh8fsj.gif">DEFENSA ico</option>
+                            
+                        </select>    
+
+                        <input className='form-control' placeholder='materiales' name='materiales' value={values.materiales} onChange={handleInputChange} />
+                        <input className='form-control' placeholder='descripcion' name='descripcion' value={values.descripcion} onChange={handleInputChange} />
+                        <label>Caja</label>
+                        <select  className='form-control' placeholder='caja' name='caja' value={values.caja} onChange={handleInputChange} > 
+
+                        <option value=""></option>
+                        <option value="Stars of syncro">Stars of syncro</option>
+                        <option value="Shining sunrise">Shining sunrise</option>
+                        <option value="Heart of xyz">Heart of xyz</option>
+                        <option value="Cross dimension">Cross dimension</option>
+
+                        </select>
+                        <label>Estructura</label>
+                        <select  className='form-control' placeholder='estructura' name='estructura' value={values.estructura} onChange={handleInputChange} > 
+
+                        <option value=""></option>
+                        <option value="Ruddy rose burning">Ruddy rose burning</option>
+                        <option value="Brave hope">Brave hope</option>
+                        <option value="Heart of xyz">Tellarknight advent</option>
+                        <option value="Cross dimension">Sword of paladin</option>
+
+                        </select>
+
+                        <label>Selection box</label>
+                        <select  className='form-control' placeholder='selection box' name='selection_box' value={values.selection_box} onChange={handleInputChange} > 
+
+                        <option value=""></option>
+
+                        </select>
+                        <label>Lote</label>
+                        <select  className='form-control' placeholder='lote' name='lote' value={values.lote} onChange={handleInputChange} > 
+
+                        <option value=""></option>
+
+                        </select>
+
+                        <input className='form-control' placeholder='Fecha de lanzamiento' name='fecha_lanzamiento' value={values.fecha_lanzamiento} onChange={handleInputChange} />
+
                     </div>
+                    
                     <div className='form-group text-center'>
                         <button type='submit' className='btn btn-light'> Enviar </button>
                     </div>

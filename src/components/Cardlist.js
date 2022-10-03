@@ -89,9 +89,10 @@ const results = !search ? cardList : cardList.filter((data)=> data.nombre.toLowe
   const imageCard = data =>(
 
    // <div className='card' onClick={()=>{showRecordDetails(data)}} >
-   <div className='card'>
+   <div className='cartalist'>
       <div><img src={data.rareza} className='rareza'></img></div>
-  <div> <img src={data.image.secure_url} className='card-img-top' sizes="(min-width: 576px) 104px, (max-width: 575px) 20vw"></img> </div>
+      <div><img src={data.limitacion} className='limitacion'></img></div>
+  <div> <img src={data.image.secure_url} className='cartatop' sizes="(min-width: 576px) 104px, (max-width: 575px) 20vw"></img> </div>
    </div>
   )
 
