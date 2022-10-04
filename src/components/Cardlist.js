@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import Card from './Card'
 import axios from 'axios'
 import { Pagination } from './Pagination.js'
+import Header from './Header.js'
 
 
 
@@ -119,31 +120,15 @@ const results = !search ? cardList : cardList.filter((data)=> data.nombre.toLowe
     const paginate = pageNumber => setCurrentPage(pageNumber)
 
   return (
+  
     <div>
-    <nav className="navbar navbar-expand-lg bg-dark" width='100%' >
-    <div className="container-fluid">
-      <a className="navbar-brand" href="#" > <img src='./img/DLP.png' height='125' ></img> </a>
-      <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span className="navbar-toggler-icon"></span>
-      </button>
-      <div className="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-          <li className="nav-item">
-            <a to={"/cartas"}className="nav-link" href="#"></a>
-          </li>
-          <li className="nav-item">
-            <a className="nav-link" to={"/add"}></a>
-          </li>
-        </ul>
-        <form className="d-flex" role="search">
-          <input  value={search} onChange={searcher} className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-          <button className="btn btn-light" type="submit">Buscar</button>
-        </form>
-      </div>
-    </div>
-  </nav>
-  <br />
-    
+     <Header />
+     <br /> 
+     <br /> 
+     <br /> 
+     <br /> 
+     <br /> 
+     <br /> 
     <div className='row'>
         <div className='col-md-4'> <Card 
                         addOrEdit={addOrEdit}
@@ -178,6 +163,6 @@ const results = !search ? cardList : cardList.filter((data)=> data.nombre.toLowe
 
         
 
-        </div>
+    </div>
   )
 }

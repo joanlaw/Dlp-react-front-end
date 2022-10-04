@@ -52,3 +52,35 @@ code {
     filter: drop-shadow(1px 1px 2px #000);
   }
 
+/*  Header decoracion  */  
+  a {
+    color: #d5ba27;
+  }
+
+  a:hover {
+    color: #a8942c;
+    text-decoration: none;
+  }
+
+#header {
+  background-color: #000000;
+  padding: 15px;
+}
+
+/* Navegacion del menú     */
+
+.nav-menu ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.nav-menu > ul {
+  display: flex;
+}
+
+.nav-menu > ul > li {
+  position: relative;
+  white-space: nowrap;
+  padding: 10px 0 10px 22px;
+}
