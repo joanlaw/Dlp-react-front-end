@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom"
 import Card from './Card'
 import axios from 'axios'
 import { Pagination } from './Pagination.js'
@@ -120,6 +121,7 @@ const results = !search ? cardList : cardList.filter((data)=> data.nombre.toLowe
     const paginate = pageNumber => setCurrentPage(pageNumber)
 
   return (
+  
   
     <div>
      <Header />
