@@ -3,6 +3,16 @@ body {
   font-family: 'Roboto', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  height: auto;
+}
+
+header {
+  height: 10%;
+  font-weight: 600;
+}
+
+h1 {
+  text-align: center;
 }
 
 code {
@@ -54,7 +64,8 @@ code {
 
 /*  Header decoracion  */  
   a {
-    color: #d5ba27 !important;
+    color: #d6f7fb !important;
+    text-decoration: none;
   }
 
   a:hover {
@@ -65,6 +76,10 @@ code {
 #header {
   background-color: #000000;
   padding: 15px;
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: space-between;
 }
 
 /* Navegacion del menú     */
@@ -73,23 +88,28 @@ code {
   margin: 0;
   padding: 0;
   list-style: none;
+
 }
 
 .nav-menu > ul {
   display: flex;
+
+
 }
 
 .nav-menu > ul > li {
   color: #d6f7fb;
   display: block;
   transition: 0.3s;
-  font-size: 25px;
-  font-weight: 500;
+  font-size: 18px;
+  font-weight: 600;
   padding: 0 4px;
   text-transform: uppercase;
   position: relative;
   white-space: nowrap;
   padding: 10px 0 10px 22px;
+  
+ 
 }
 
 .nav-menu > ul > li:hover{
