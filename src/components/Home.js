@@ -4,6 +4,8 @@ import Card from './Card'
 import axios from 'axios'
 import { Pagination } from './Pagination.js'
 import Header from './Header.js'
+import Clusters from './Clusters'
+
 
 export default function Home(){
     return(
@@ -15,7 +17,7 @@ export default function Home(){
      <br /> 
      <br /> 
      <br /> 
-        <h1>Home</h1>
+        <Clusters />
         </div>
     )
 }

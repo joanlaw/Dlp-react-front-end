@@ -16,6 +16,7 @@ function Header() {
   <li href='#' >BAN LIST</li>
   <li href='#' >TIER LIST</li>
   <li href='#' >DECKS COMUNIDAD</li>
+  <li href='#' >NOTICIAS</li>
   <li> <Link to="/agregar" >AGREGAR CARTA</Link></li>
 </ul>
 

@@ -130,7 +130,7 @@ return(
     <br /> 
     <br /> 
     <br /> 
-    <h1>Todas las cartas de Duel Links</h1>
+    
        <div className='col-md-12'>
           <table> 
              <tbody>
