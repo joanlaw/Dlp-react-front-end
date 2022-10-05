@@ -130,7 +130,8 @@ return(
     <br /> 
     <br /> 
     <br /> 
-    
+    <input  value={search} onChange={searcher} className="mb-2 form-control" type="search" placeholder="Buscar Carta" aria-label="Search" />
+    <br />
        <div className='col-md-12'>
           <table> 
              <tbody>
