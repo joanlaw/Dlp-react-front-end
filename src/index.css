@@ -28,7 +28,7 @@ code {
 
   .cartalist {
     height: auto;
-    width: 100%;
+    width: 128px;
     flex-wrap: wrap;
     padding: 0.2em;
     overflow-x: hidden;
