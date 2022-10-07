@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react'
 const defaulImageSrc = '/img/srcyugi.jpg'
 
 const initialFieldValues = {
-    id: 0,
+    _id: '',
     nombre: '',
     tipo_de_carta: '',
     atributo: '',
@@ -98,7 +98,7 @@ const handleFormSubmit = e =>{
     e.preventDefault()
     if(validate()){
     const formData = new FormData()
-    //formData.append('_id', values._id)
+    formData.append('_id', values._id)
     formData.append('nombre', values.nombre)
     formData.append('tipo_de_carta', values.tipo_de_carta)
     formData.append('atributo', values.atributo)
@@ -289,16 +289,22 @@ const applyErrorClass = field => ((field in errors && errors[field]===false )?' 
                         <select  className='form-control' placeholder='caja' name='caja' value={values.caja} onChange={handleInputChange} > 
 
                         <option value=""></option>
+                        <option value="Link revolution">Link revolution</option>
                         <option value="Stars of syncro">Stars of syncro</option>
                         <option value="Shining sunrise">Shining sunrise</option>
                         <option value="Heart of xyz">Heart of xyz</option>
                         <option value="Cross dimension">Cross dimension</option>
+                        <option value="Energy of gigarays">Energy of gigarays</option>
+                        <option value="Maximum gustav">Maximum gustav</option>
+                        <option value="Phantom of rebellion">Phantom of rebellion</option>
+                        <option value="Fantastic arc">Fantastic arc</option>
 
                         </select>
                         <label>Estructura</label>
                         <select  className='form-control' placeholder='estructura' name='estructura' value={values.estructura} onChange={handleInputChange} > 
 
                         <option value=""></option>
+                        <option value="Cyberse code">Cyberse code</option>
                         <option value="Ruddy rose burning">Ruddy rose burning</option>
                         <option value="Brave hope">Brave hope</option>
                         <option value="Heart of xyz">Tellarknight advent</option>
@@ -310,12 +316,17 @@ const applyErrorClass = field => ((field in errors && errors[field]===false )?' 
                         <select  className='form-control' placeholder='selection box' name='selection_box' value={values.selection_box} onChange={handleInputChange} > 
 
                         <option value=""></option>
+                        <option value="Selection box super mini vol.02">Selection box super mini vol.02</option>
+                        <option value="Selection box mini vol.04">Selection box mini vol.04</option>
+                        <option value="Selection box vol.05">Selection box vol.05</option>
+                        <option value="Selection box vol.04">Selection box vol.04</option>
 
                         </select>
                         <label>Lote</label>
                         <select  className='form-control' placeholder='lote' name='lote' value={values.lote} onChange={handleInputChange} > 
 
                         <option value=""></option>
+                        <option value="Lote especial">Lote especial</option>
 
                         </select>
 

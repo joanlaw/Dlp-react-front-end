@@ -9,6 +9,7 @@ function App() {
     <div className='container' >
 
       <Routes>
+      <Route  path='/cartas:_id'   />
         <Route  path='/' element={<Home />} />
         <Route  path='/cartas' element={<Allcards />} />
         <Route  path='/agregar' element={<Cardlist />} />

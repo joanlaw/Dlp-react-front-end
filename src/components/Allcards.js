@@ -28,7 +28,9 @@ export default function Allcards() {
           update: (id, updatedRecord) => axios.put(url  + id, updatedRecord),
           delete: id => axios.delete(url + id)
       }
-    }  
+    } 
+    
+    
   
       //Funcion de búsqueda
   
@@ -137,9 +139,11 @@ return(
              <tbody>
                {
                  //tr > 3 td
-                 [...Array(Math.ceil(currentPost.length/ 10))].map((e,i)=>
+                 [...Array(Math.ceil(currentPost.length/ 10))].map((e,i,data,_id)=>
                  <tr key={i} >
+                  <Link to={`/cartas/${data.rareza}`} > 
                    <td> {imageCard(currentPost[10 * i ])} </td>
+                   
                    <td> {currentPost[10 * i + 1] ? imageCard(currentPost[10 * i + 1]) : null} </td>
                    <td> {currentPost[10 * i + 2] ? imageCard(currentPost[10 * i + 2]) : null} </td>
                    <td> {currentPost[10 * i + 3] ? imageCard(currentPost[10 * i + 3]) : null} </td>
@@ -149,7 +153,7 @@ return(
                    <td> {currentPost[10 * i + 7] ? imageCard(currentPost[10 * i + 7]) : null} </td>
                    <td> {currentPost[10 * i + 8] ? imageCard(currentPost[10 * i + 8]) : null} </td>
                    <td> {currentPost[10 * i + 9] ? imageCard(currentPost[10 * i + 9]) : null} </td>
-
+                   </Link>
 
                  </tr>
 
