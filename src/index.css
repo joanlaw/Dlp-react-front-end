@@ -137,3 +137,45 @@ code {
 
 }
 */
+
+
+.listcards{
+  display: grid;
+    margin: 0 5px;
+    grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+    gap: 30px 10px;
+    padding: 0;
+    width: 100%;
+}
+
+.cartainfo {
+  width: 30%;
+  float:left;
+}
+
+.rarezainfo {
+  width: 13%;
+    display: grid;
+    float:inherit;
+    margin-left: 20.4ch;
+}
+
+.botonesmargen {
+  margin-top: 10em;
+ 
+}
+.searchmargen {
+  margin-top: 10em;
+}
+.nivel_rareza_info {
+  width: 40px;
+}
+
+.atributo_info {
+  margin-left: 1ch;
+  width: 40px;
+}
+
+.span_info {
+  margin-left: 1ch;
+}

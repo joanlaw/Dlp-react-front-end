@@ -5,6 +5,7 @@ import axios from 'axios'
 import { Pagination } from './Pagination.js'
 import Header from './Header.js'
 import Cardlist from './Cardlist'
+import { render } from '@testing-library/react'
 
 
 export default function Allcards() {
@@ -89,16 +90,24 @@ export default function Allcards() {
   //  }
   
     //Solicitar a la api los datos de cartas para mostrar
-    const imageCard = data =>(
+    
+    const ImageCard = ({data}) =>
+    
+    
+    (
+    
+   // const imageCard = data =>(
   
      // <div className='card' onClick={()=>{showRecordDetails(data)}} >
+     
+     
      <div className='cartalist'>
         <div><img src={data.rareza} className='rareza'></img></div>
         <div><img src={data.limitacion} className='limitacion'></img></div>
-    <div> <img src={data.image.secure_url} className='cartatop' sizes="(min-width: 576px) 104px, (max-width: 575px) 20vw"></img> </div>
+    <div> <img src={data.image.secure_url} className='cartatop' sizes="(min-width: 576px) 104px, (max-width: 575px) 20vw" alt={data.nombre} ></img> </div>
      </div>
     )
-  
+ 
   
       //Solicitar a la api datos funcion para limitacion
   
@@ -126,45 +135,21 @@ return(
 
     <div>
     <Header />
-    <br /> 
-    <br /> 
-    <br /> 
-    <br /> 
-    <br /> 
-    <br /> 
-    <input  value={search} onChange={searcher} className="mb-2 form-control" type="search" placeholder="Buscar Carta" aria-label="Search" />
+    <input  value={search} onChange={searcher} className="mb-2 form-control searchmargen " type="search" placeholder="Buscar Carta" aria-label="Search" />
     <br />
-       <div className='col-md-12'>
-          <table> 
-             <tbody>
-               {
-                 //tr > 3 td
-                 [...Array(Math.ceil(currentPost.length/ 10))].map((e,i,data,_id)=>
-                 <tr key={i} >
-                  <Link to={`/cartas/${data.rareza}`} > 
-                   <td> {imageCard(currentPost[10 * i ])} </td>
-                   
-                   <td> {currentPost[10 * i + 1] ? imageCard(currentPost[10 * i + 1]) : null} </td>
-                   <td> {currentPost[10 * i + 2] ? imageCard(currentPost[10 * i + 2]) : null} </td>
-                   <td> {currentPost[10 * i + 3] ? imageCard(currentPost[10 * i + 3]) : null} </td>
-                   <td> {currentPost[10 * i + 4] ? imageCard(currentPost[10 * i + 4]) : null} </td>
-                   <td> {currentPost[10 * i + 5] ? imageCard(currentPost[10 * i + 5]) : null} </td>
-                   <td> {currentPost[10 * i + 6] ? imageCard(currentPost[10 * i + 6]) : null} </td>
-                   <td> {currentPost[10 * i + 7] ? imageCard(currentPost[10 * i + 7]) : null} </td>
-                   <td> {currentPost[10 * i + 8] ? imageCard(currentPost[10 * i + 8]) : null} </td>
-                   <td> {currentPost[10 * i + 9] ? imageCard(currentPost[10 * i + 9]) : null} </td>
-                   </Link>
+       <div className='listcards'>
 
-                 </tr>
 
-                 )
-               }
-             </tbody>
-          </table>
-          <br />
-          <Pagination  postPerPage={postPerPage} totalPost={results.length} paginate={paginate} />
+       {currentPost.map((element)=>(
+       <Link to={`/cartas/${element._id}/${element.nombre}/`} >
+           <ImageCard data={element}/>
+       </Link>
+   ))}
+
+         
            </div>
-           
+           <br />
+         <Pagination  postPerPage={postPerPage} totalPost={results.length} paginate={paginate} />
        </div>
 
 )

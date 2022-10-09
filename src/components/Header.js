@@ -7,7 +7,7 @@ function Header() {
     return(
 <header id='header' className='fixed-top' >
 <div className='container d-flex align-items-center' >
-<a className="navbar-brand" href="/" > <img src='./img/ico-d01.png' height="70" ></img> </a>  
+<Link to='/' className="navbar-brand"  > <img src='./img/ico-d01.png' height="70" ></img> </Link>  
 <nav className='nav-menu d-none d-lg-block' >
 <ul>
   <li className='active' href='#' ></li>
