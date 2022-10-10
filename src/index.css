@@ -4,6 +4,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   height: auto;
+  background-color: #000015;
 }
 
 header {
@@ -11,8 +12,19 @@ header {
   font-weight: 600;
 }
 
-h1 {
+h1, h2, h3, h4, h5, h6{
+  color: #d6f7fb;
   text-align: center;
+}
+
+p, a, span, label {
+  color: #d6f7fb;
+}
+
+.card-body, .page-link, .form-control{
+  background-color: #040d16 !important;
+  
+  
 }
 
 code {
@@ -33,6 +45,11 @@ code {
     padding: 0.2em;
     overflow-x: hidden;
     overflow-y: auto;
+    
+  }
+
+  .cartalist:hover{
+    border: 1px solid #000306;
   }
 
   .cartatop {
@@ -138,26 +155,44 @@ code {
 }
 */
 
-
+/* Lista de cartas */
 .listcards{
   display: grid;
     margin: 0 5px;
     grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
-    gap: 30px 10px;
+    gap: 10px 10px;
     padding: 0;
     width: 100%;
+    background-image: url(/src/assets/dl-bg08.jpg) ;
+    background-repeat: repeat;
+    height: auto;
+    border: 2px solid #1D3E67;
+    border-radius: 4px;
+    flex-wrap: wrap;
+    will-change: transform;
+    align-items: flex-end!important;
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding-right: 1em;
+    padding-left: 0.5em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    
 }
+
 
 .cartainfo {
   width: 30%;
   float:left;
+  margin-left: 2em;
+  margin-right: 1em;
 }
 
 .rarezainfo {
   width: 13%;
     display: grid;
     float:inherit;
-    margin-left: 20.4ch;
+    margin-left: 24.05ch;
 }
 
 .botonesmargen {
@@ -172,10 +207,44 @@ code {
 }
 
 .atributo_info {
-  margin-left: 1ch;
+
   width: 40px;
 }
 
 .span_info {
-  margin-left: 1ch;
+  text-align: justify !important;
+ 
+}
+
+.listaa {
+  background-image: url(/src/assets/dl-bg15.jpg);
+}
+
+@media only screen and (max-width: 600px) {
+  .cartalist {
+    
+    width: 56px;
+    height: 87px;
+    
+    
+  }
+
+  .cartatop {
+    
+  }
+  .rareza{
+    width: 10%;
+  }
+  .limitacion{
+   width: 10px;
+  }
+
+  .listcards{
+    display: flex;
+  }
+}
+
+
+.listatopcards{
+  padding-left: 3em;
 }

@@ -16,7 +16,7 @@ export default function Cardlist() {
   const [recordForEdit, setrecordForEdit ] = useState("")
   const [loading, setLoading ] = useState (false)
   const [currentPage, setCurrentPage] = useState(1)
-  const [postPerPage,] = useState(20)
+  const [postPerPage,] = useState(100)
 
   useEffect(()=>{
     refreshCardList();
@@ -137,18 +137,19 @@ const results = !search ? cardList : cardList.filter((data)=> data.nombre.toLowe
                        // recordForEdit={recordForEdit}
                                                 /> 
         </div>
-        <div className='col-md-8'>
+        <div className='col-md-8 listaa listatopcards'  >
            <table> 
               <tbody>
                 {
                   //tr > 3 td
-                  [...Array(Math.ceil(currentPost.length/ 5))].map((e,i)=>
+                  [...Array(Math.ceil(currentPost.length/ 6))].map((e,i)=>
                   <tr key={i} >
-                    <td> {imageCard(currentPost[5 * i ])} </td>
-                    <td> {currentPost[5 * i + 1] ? imageCard(currentPost[5 * i + 1]) : null} </td>
-                    <td> {currentPost[5 * i + 2] ? imageCard(currentPost[5 * i + 2]) : null} </td>
-                    <td> {currentPost[5 * i + 3] ? imageCard(currentPost[5 * i + 3]) : null} </td>
-                    <td> {currentPost[5 * i + 4] ? imageCard(currentPost[5 * i + 4]) : null} </td>
+                    <td> {imageCard(currentPost[6 * i ])} </td>
+                    <td> {currentPost[6 * i + 1] ? imageCard(currentPost[6 * i + 1]) : null} </td>
+                    <td> {currentPost[6 * i + 2] ? imageCard(currentPost[6 * i + 2]) : null} </td>
+                    <td> {currentPost[6 * i + 3] ? imageCard(currentPost[6 * i + 3]) : null} </td>
+                    <td> {currentPost[6 * i + 4] ? imageCard(currentPost[6 * i + 4]) : null} </td>
+                    <td> {currentPost[6 * i + 5] ? imageCard(currentPost[6 * i + 5]) : null} </td>
 
 
                   </tr>

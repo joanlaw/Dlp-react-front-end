@@ -54,7 +54,7 @@ const navigate = useNavigate()
                     <img src={cartas.rareza}  className='rarezainfo' alt='rareza' ></img>
                     <img src={image.secure_url} className='cartainfo' alt={cartas.nombre} sizes="(min-width: 576px) 104px, (max-width: 575px) 20vw"  ></img> 
                     </div>   
-                        <img src={cartas.atributo_ico} className='atributo_info' ></img>
+                        <img src={cartas.atributo_ico} className='atributo_info' ></img> <span>{cartas.atributo}</span> 
                         <img src={cartas.nivel_rango_ico} className='nivel_rareza_info'  ></img> <span>{cartas.nivel_rango}</span>
                         <br />
                         <br />
@@ -62,7 +62,8 @@ const navigate = useNavigate()
                         <br />
                         <span className='span_info' >{cartas.descripcion}</span>
                         <br />
-                       ATK <span>{cartas.atk}</span> / DEF <span>{cartas.def}</span>
+                        <br />
+                        <span>ATK</span> <span>{cartas.atk}</span> <span>/</span> <span>DEF</span> <span>{cartas.def}</span>
                        <br />
                        <span className='span_info'>¿Cómo obtener?</span>
                        <br />

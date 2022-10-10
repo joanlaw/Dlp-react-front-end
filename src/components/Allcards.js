@@ -104,7 +104,7 @@ export default function Allcards() {
      <div className='cartalist'>
         <div><img src={data.rareza} className='rareza'></img></div>
         <div><img src={data.limitacion} className='limitacion'></img></div>
-    <div> <img src={data.image.secure_url} className='cartatop' sizes="(min-width: 576px) 104px, (max-width: 575px) 20vw" alt={data.nombre} ></img> </div>
+    <div> <img src={data.image.secure_url} className='cartatop'  sizes="(min-width: 576px) 104px, (max-width: 575px) 20vw"  alt={data.nombre} ></img> </div>
      </div>
     )
  
@@ -136,7 +136,7 @@ return(
     <div>
     <Header />
     <input  value={search} onChange={searcher} className="mb-2 form-control searchmargen " type="search" placeholder="Buscar Carta" aria-label="Search" />
-    <br />
+   
        <div className='listcards'>
 
 

@@ -14,7 +14,7 @@ function Header() {
   <li> <Link to="/cartas" >Cartas</Link></li>
   <li ><a href='/cartas'>HABILIDADES </a> </li>
   <li href='#' >BAN LIST</li>
-  <li href='#' >TIER LIST</li>
+  <li> <Link to="/decks-meta" >TIER LIST</Link></li>
   <li href='#' >DECKS COMUNIDAD</li>
   <li href='#' >NOTICIAS</li>
   <li> <Link to="/agregar" >AGREGAR CARTA</Link></li>

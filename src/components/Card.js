@@ -298,6 +298,7 @@ const applyErrorClass = field => ((field in errors && errors[field]===false )?' 
                         <option value="Maximum gustav">Maximum gustav</option>
                         <option value="Phantom of rebellion">Phantom of rebellion</option>
                         <option value="Fantastic arc">Fantastic arc</option>
+                        <option value="Dark dimension">Dark dimension</option>
 
                         </select>
                         <label>Estructura</label>
@@ -309,6 +310,7 @@ const applyErrorClass = field => ((field in errors && errors[field]===false )?' 
                         <option value="Brave hope">Brave hope</option>
                         <option value="Heart of xyz">Tellarknight advent</option>
                         <option value="Cross dimension">Sword of paladin</option>
+                        
 
                         </select>
 
