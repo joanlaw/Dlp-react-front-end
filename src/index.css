@@ -157,7 +157,7 @@ code {
 
 /* Lista de cartas */
 .listcards{
-  display: grid;
+  display: flex;
     margin: 0 5px;
     grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
     gap: 10px 10px;
