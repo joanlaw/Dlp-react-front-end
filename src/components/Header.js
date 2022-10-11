@@ -7,7 +7,7 @@ function Header() {
     return(
 <header id='header' className='fixed-top' >
 <div className='container d-flex align-items-center' >
-<Link to='/' className="navbar-brand"  > <img src='./img/ico-d01.png' height="70" ></img> </Link>  
+<Link to='/' className="navbar-brand"  > <img src='https://res.cloudinary.com/dqofcbeaq/image/upload/q_auto/v1663790369/iconos%20dlp/ico-d01_kui7ic.png' height="70" ></img> </Link>  
 <nav className='nav-menu d-none d-lg-block' >
 <ul>
   <li className='active' href='#' ></li>
