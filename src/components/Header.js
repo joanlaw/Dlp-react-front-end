@@ -18,6 +18,7 @@ function Header() {
   <li href='#' >DECKS COMUNIDAD</li>
   <li href='#' >NOTICIAS</li>
   <li> <Link to="/agregar" >AGREGAR CARTA</Link></li>
+  <li> <Link to="/crear-deck" >CREAR DECK</Link></li>
 </ul>
 
 </nav>

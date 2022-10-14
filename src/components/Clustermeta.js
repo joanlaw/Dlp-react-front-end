@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 import "./cluster.css";
 
-function Cluster({ imageSource, title, text, url }) {
+function Clustermeta({ imageSource, title, text, url }) {
   return (
     <div className="card text-center bg-dark animate__animated animate__fadeInUp">
       <div className="overflow">
@@ -20,18 +20,18 @@ function Cluster({ imageSource, title, text, url }) {
           className="btn btn-outline-secondary border-0"
           rel="noreferrer"
         >
-          Ir a {title}
+        {title}
         </Link>
       </div>
     </div>
   );
 }
 
-Cluster.propTypes = {
+Clustermeta.propTypes = {
   title: PropTypes.string.isRequired,
   text: PropTypes.string,
   url: PropTypes.string,
   imageSource: PropTypes.string
 };
 
-export default Cluster;
+export default Clustermeta;

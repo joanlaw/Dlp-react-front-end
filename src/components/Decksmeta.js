@@ -1,13 +1,18 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import Clustersmeta from './Clustersmeta'
 import Header from './Header'
+
+
+
 
 const Decksmeta = () => {
   return (
     <div>
         <Header />
-        <h1 className='searchmargen'>Decks meta</h1>
-        <p><Link to='/decks-meta/prueba' > Deck de prueba</Link></p>
+        <h1 className='h1margen'>Tier List</h1>
+        <br />
+        <Clustersmeta />
     </div>
   )
 }
