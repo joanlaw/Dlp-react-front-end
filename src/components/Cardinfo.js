@@ -2,6 +2,7 @@ import React from 'react'
 import { useParams} from 'react-router-dom'
 import { useNavigate } from 'react-router-dom';
 import Header from './Header';
+
 //import Allcards from './Allcards';
 //import axios from 'axios'
 
@@ -40,7 +41,7 @@ const navigate = useNavigate()
     <div>
         <Header />
 
-     <button className='btn btn-primary botonesmargen '  onClick={() => navigate(-1)}>Atrás</button>          
+     <button className='btn btn-primary botonesmargen '  onClick={() => navigate(-1)}  data-tip data-for="tooltipsdlp" >Atrás</button>          
     <h1>{cartas.nombre}</h1> 
     <br />
     <div className='row' >

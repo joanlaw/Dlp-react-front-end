@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import Header from './Header';
 import { Link } from 'react-router-dom';
+import Footer from './Footer';
  
 class Newdeck extends React.Component {
   state = {
@@ -120,6 +121,28 @@ class Newdeck extends React.Component {
       mainveintiocho: this.state.mainveintiocho,
       mainveintinueve: this.state.mainveintinueve,
       maintreinta: this.state.maintreinta,
+      //
+      extrauno: this.state.extrauno,
+      extrados: this.state.extrados,
+      extratres: this.state.extratres,
+      extracuatro: this.state.extracuatro,
+      extracinco: this.state.extracinco,
+      extraseis: this.state.extraseis,
+      extrasiete: this.state.extrasiete,
+      extraocho: this.state.extraocho,
+      extranueve: this.state.extranueve,
+      extradiez: this.state.extradiez,
+      //
+      sideuno: this.state.sidedos,
+      sidedos: this.state.sidedos,
+      sidetres: this.state.sidetres,
+      sidecuatro: this.state.sidecuatro,
+      sidecinco: this.state.sidecinco,
+      sideseis: this.state.sideseis,
+      sidesiete: this.state.sidesiete,
+      sideocho: this.state.sideocho,
+      sidenueve: this.state.sidenueve,
+      sidediez: this.state.sidediez,
     }
 
     axios.post('https://dlpro-backend.herokuapp.com/decks/', data_to_send)
@@ -455,26 +478,26 @@ class Newdeck extends React.Component {
             <th>Deck</th>
             <th>Habilidad</th>
             <th>Arquetipo</th>
-            <th>Imagen</th>
-            <th>Engine</th>     
+            <th>Jugador</th>
+            <th>Fecha</th>     
         </tr>
         </thead>
         <tbody>
         {this.state.contacts.map((contact, index) => (
         <tr key={index._id}>
 
-            <td> <Link to={`/decks/${contact._id}`} > { contact.jugador } </Link> </td>
+            <td> <Link to={`/decks/${contact._id}`} > <img src={ contact.arquetipo_image } height='50' /> </Link> </td>
             <td>{ contact.habilidad }</td>
             <td>{ contact.arquetipo }</td>
-            <td>{ contact.arquetipo_image }</td>
-            <td>{ contact.engine }</td>
+            <td>{ contact.jugador } </td>
+            <td>{ contact.createdAt }</td>
 
         </tr>
         ))}
         </tbody>
         </table>
          </div>  
- 
+            <Footer />
         </div>
     );
   }

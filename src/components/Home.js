@@ -5,6 +5,7 @@ import axios from 'axios'
 import { Pagination } from './Pagination.js'
 import Header from './Header.js'
 import Clusters from './Clusters'
+import Footer from './Footer'
 
 
 export default function Home(){
@@ -18,6 +19,8 @@ export default function Home(){
      <br /> 
      <br /> 
         <Clusters />
+        <div className='footermargin' ></div>
+        <Footer />
         </div>
     )
 }

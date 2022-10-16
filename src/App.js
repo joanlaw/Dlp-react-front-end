@@ -13,6 +13,7 @@ import Deckslist from './components/Deckslist';
 import FormEmployee from './components/Newdeck';
 import Newdeck from './components/Newdeck';
 import Salamangrande from './components/decks/Salamangrande.js';
+import Tooltips from './components/Tooltips';
 
 function App() {
   return (
@@ -29,6 +30,8 @@ function App() {
         <Route  path='/decks-meta/prueba' element={<Prueba />} />
         <Route  path='/agregar' element={<Cardlist />} />
         <Route  path='/agregar/:!#' element={<Pagination />} />
+        <Route  path='/tooltip' element={<Tooltips />} />
+        
         
 
 

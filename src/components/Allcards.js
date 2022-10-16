@@ -6,6 +6,10 @@ import { Pagination } from './Pagination.js'
 import Header from './Header.js'
 import Cardlist from './Cardlist'
 import { render } from '@testing-library/react'
+import ReactTooltip from 'react-tooltip'
+import Tooltips from './Tooltips'
+import { Tooltip } from 'bootstrap'
+import Footer from './Footer'
 
 
 export default function Allcards() {
@@ -91,23 +95,21 @@ export default function Allcards() {
   
     //Solicitar a la api los datos de cartas para mostrar
     
-    const ImageCard = ({data}) =>
+    const ImageCard = ({data})  =>
     
-    
+
     (
     
-   // const imageCard = data =>(
-  
-     // <div className='card' onClick={()=>{showRecordDetails(data)}} >
-     
-     
+ 
+
      <div className='cartalist'>
         <div><img src={data.rareza} className='rareza'></img></div>
         <div><img src={data.limitacion} className='limitacion'></img></div>
     <div> <img src={data.image.secure_url} className='cartatop'  sizes="(min-width: 576px) 104px, (max-width: 575px) 20vw"  alt={data.nombre} ></img> </div>
      </div>
-    )
  
+    )
+  
   
       //Solicitar a la api datos funcion para limitacion
   
@@ -135,10 +137,10 @@ return(
 
     <div>
     <Header />
-    <input  value={search} onChange={searcher} className="mb-2 form-control searchmargen " type="search" placeholder="Buscar Carta" aria-label="Search" />
-   
-       <div className='listcards'>
 
+    <input  value={search} onChange={searcher} className="mb-2 form-control searchmargen " type="search" placeholder="Buscar Carta" aria-label="Search" />
+     
+       <div className='listcards'  >
 
        {currentPost.map((element)=>(
        <Link to={`/cartas/${element._id}/${element.nombre}/`} >
@@ -148,9 +150,14 @@ return(
 
          
            </div>
+           
            <br />
          <Pagination  postPerPage={postPerPage} totalPost={results.length} paginate={paginate} />
+
+        <div className='' ></div>
+         <Footer />
        </div>
+       
 
 )
 }
